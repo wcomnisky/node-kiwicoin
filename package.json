@@ -1,0 +1,28 @@
+{
+  "name": "node-kiwicoin",
+  "description": "Unofficial kiwi-coin.com API client for Node.js",
+  "version": "0.0.1",
+  "author": "William Comnisky",
+  "license": "MIT",
+  "homepage": "https://github.com/wcomnisky/node-kiwicoin",
+  "keywords": [
+    "bitcoin",
+    "kiwi-coin",
+    "exchange",
+    "market"
+  ],
+  "dependencies": {
+    "request": "2.83.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wcomnisky/node-kiwicoin.git"
+  },
+  "main": "kiwicoin.js",
+  "engines": {
+    "node": ">=8.0"
+  },
+  "bugs": {
+    "url": "https://github.com/wcomnisky/node-kiwicoin/issues"
+  }
+}
