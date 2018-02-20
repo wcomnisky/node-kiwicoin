@@ -45,7 +45,7 @@ Kiwicoin.prototype._doPrivateRequest = function (service, params, callback) {
         return callback(new Error('The UserID, API key and secret must be provided'));
     }
 
-    var nonce = Math.round((new Date()).getTime() / 1000);
+    var nonce = new Date().getTime();
     if (self.nonce) {
         nonce = self.nonce();
     }
@@ -53,9 +53,9 @@ Kiwicoin.prototype._doPrivateRequest = function (service, params, callback) {
     var message = nonce.toString() + self.userId.toString() + self.apiKey.toString() + ';' + service;
 
     var formData = {};
-    for (var key in params) {
-        message = message + ';' + params[key];
-        formData[key] = params[key];
+    for (var i = 0; i < params.length; i++) {
+        message = message + ',' + params[i][1]
+        formData[params[i][0]] = params[i][1]
     }
 
     var fullSignature = crypto.createHmac('sha256', self.secret).update(new Buffer(message)).digest('hex').toString().toUpperCase();
@@ -127,25 +127,25 @@ Kiwicoin.prototype.openOrders = function (callback) {
 };
 
 Kiwicoin.prototype.cancelOrder = function (orderId, callback) {
-    var param = {
-        id: orderId
-    }
+    var param = [
+        ['id', orderId]
+    ]
     this._doPrivateRequest('cancel_order', param, callback);
 };
 
 Kiwicoin.prototype.buy = function (price, amount, callback) {
-    var params = {
-        price: price,
-        amount: amount
-    }
+    var params = [
+        ['price', price],
+        ['amount', amount]
+    ]
     this._doPrivateRequest('buy', params, callback);
 };
 
 Kiwicoin.prototype.sell = function (price, amount, callback) {
-    var params = {
-        price: price,
-        amount: amount
-    }
+    var params = [
+        ['price', price],
+        ['amount', amount]
+    ]
     this._doPrivateRequest('sell', params, callback);
 };
 
