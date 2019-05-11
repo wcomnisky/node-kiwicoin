@@ -1,1 +1,8 @@
+# Jekyll config
+
+title: node-kiwicoin
+description: Kiwi-Coin API Client for Node.js
+baseurl: "/node-kiwicoin/"
+url: "https://wcomnisky.github.io"
+
 theme: jekyll-theme-slate
