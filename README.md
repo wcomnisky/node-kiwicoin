@@ -16,8 +16,8 @@ The API has 2 groups of services (or functions):
 
 * **Public**: does not require authentication;
 * **Private**: requires authentication (based on your User ID, API key and secret)
-  * [Where can I find my User ID?](https://wcomnisky.github.io/node-kiwicoin/kiwi-coin/README.md)
-  * [How to create, find or enable the API key?](https://wcomnisky.github.io/node-kiwicoin/kiwi-coin/README.md)
+  * [Where can I find my User ID?](docs/kiwi-coin/README.md)
+  * [How to create, find or enable the API key?](docs/kiwi-coin/README.md)
 
 ## Usage
 
