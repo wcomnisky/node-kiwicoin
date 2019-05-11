@@ -1,33 +1,42 @@
 # node-kiwicoin
-Unofficial [Kiwi-Coin.com](https://kiwi-coin.com) API client for Node.js.
+[Kiwi-Coin.com](https://kiwi-coin.com) API client for Node.js.
 
 ## Installation
 
-The package is available on [NPM](https://www.npmjs.com/package/kiwicoin) as `kiwicoin`.
+The package is available on [NPM](https://www.npmjs.com/package/kiwicoin) as **`kiwicoin`**.
 
 ```Shell
 npm install kiwicoin
 ```
+## Kiwi-Coin API
+
+* [Official Kiwi-Coin documentation](https://kiwi-coin.com/help.html#!/api-description/)
+
+The API has 2 groups of services (or functions):
+
+* **Public**: does not require authentication;
+* **Private**: requires authentication (based on your User ID, API key and secret)
+  * [Where can I find my User ID?](https://wcomnisky.github.io/node-kiwicoin/kiwi-coin/README.md)
+  * [How to create, find or enable the API key?](https://wcomnisky.github.io/node-kiwicoin/kiwi-coin/README.md)
 
 ## Usage
 
-Using the private services:
+Using the private services from Kiwi-Coin API (they require authentication):
 
 ```javascript
+// Usage example for the Balance service:
+// --------------------------------------
+
 var Kiwicoin = require('kiwicoin');
 
 var kiwiClient = new Kiwicoin("YourUserId", "YourApiKey", "YourSecret");
+
 kiwiClient.balance(function(err, info) {
     console.log(err, info);
   });
 ```
 
-Take a look on the wiki to get instructions on how to:
-
-* [Find my userId](<https://github.com/wcomnisky/node-kiwicoin/wiki/Kiwi-Coin#how-to-find-the-userid>)
-* [Create/Enable my API Key and Secret](<https://github.com/wcomnisky/node-kiwicoin/wiki/Kiwi-Coin#how-to-createfindenable-the-api-key>)
-
-If you just want to use the public services you __don't need__ to provide the userID / API Key / Secret.
+If you just want to use the public services you __don't need__ to provide the credentials (UserId, API Key and secret).
 
 The public services are:
 
@@ -35,20 +44,17 @@ The public services are:
 * Order book (`order_book`)
 
 ```javascript
+// Usage example for the Ticker service:
+// -------------------------------------
+
 var Kiwicoin = require('kiwicoin');
 
 var kiwiClient = new Kiwicoin();
+
 kiwiClient.ticker(function(err, info) {
     console.log(err, info);
   });
 ```
-
-### Kiwi-Coin Request limits
-
-Be aware about their limits:
-
-> _Do not make more than 600 requests per 10 minutes or we will ban your IP address._
-
 ## License
 
 [MIT](LICENSE)
