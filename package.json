@@ -1,10 +1,10 @@
 {
   "name": "kiwicoin",
-  "description": "Unofficial kiwi-coin.com API client for Node.js",
+  "description": "Kiwi-Coin API client for Node.js",
   "version": "0.0.2",
   "author": "William Comnisky",
   "license": "MIT",
-  "homepage": "https://github.com/wcomnisky/node-kiwicoin",
+  "homepage": "https://wcomnisky.github.io/node-kiwicoin/",
   "keywords": [
     "bitcoin",
     "kiwi-coin",
