@@ -58,7 +58,17 @@ Kiwicoin.prototype._doPrivateRequest = function (service, params, callback) {
         formData[params[i][0]] = params[i][1]
     }
 
-    var fullSignature = crypto.createHmac('sha256', self.secret).update(new Buffer(message)).digest('hex').toString().toUpperCase();
+    let buf;
+    if (Buffer.from && Buffer.from !== Uint8Array.from) {
+        buf = Buffer.from(message);
+    } else {
+        if (typeof message === 'number') {
+            throw new Error('The "size" argument must be not of type number.');
+        }
+        buf = new Buffer(message);
+    }
+
+    var fullSignature = crypto.createHmac('sha256', self.secret).update(buf).digest('hex').toString().toUpperCase();
 
     var formDataB = {};
     formDataB.key = self.apiKey;
