@@ -57,3 +57,5 @@ typings/
 # dotenv environment variables file
 .env
 
+# package-lock.json shouldn't be added into libraries
+package-lock.json
