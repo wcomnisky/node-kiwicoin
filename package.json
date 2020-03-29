@@ -1,7 +1,7 @@
 {
   "name": "kiwicoin",
   "description": "Kiwi-Coin API client for Node.js",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "author": "William Comnisky",
   "license": "MIT",
   "homepage": "https://wcomnisky.github.io/node-kiwicoin/",
@@ -25,8 +25,17 @@
   "bugs": {
     "url": "https://github.com/wcomnisky/node-kiwicoin/issues"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "coveralls": "^3.0.11",
+    "mocha": "^7.1.1",
+    "nyc": "^15.0.0",
+    "sinon": "^9.0.1",
+    "sinon-chai": "^3.5.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nyc mocha",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "coverage-html": "nyc --reporter=html --reporter=text mocha"
   }
 }
