@@ -20,7 +20,6 @@ class Kiwicoin {
             this.nonce = options;
         }
         else if (options) {
-
             this.nonce = options.nonce;
             this.agent = options.agent;
 
@@ -62,7 +61,7 @@ class Kiwicoin {
             nonce = self.nonce();
         }
 
-        var message = nonce.toString() + self.userId.toString() + self.apiKey.toString() + ';' + service;
+        var message = `${nonce}${self.userId}${self.apiKey};${service}`;
         var formData = {};
 
         for (var i = 0; i < params.length; i++) {
