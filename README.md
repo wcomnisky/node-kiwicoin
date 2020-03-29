@@ -1,6 +1,9 @@
 # node-kiwicoin
 [Kiwi-Coin.com](https://kiwi-coin.com) API client for Node.js.
 
+[![Coverage Status](https://coveralls.io/repos/github/wcomnisky/node-kiwicoin/badge.svg?branch=fix/unit-tests)](https://coveralls.io/github/wcomnisky/node-kiwicoin?branch=fix/unit-tests)
+[![Build Status](https://travis-ci.org/wcomnisky/node-kiwicoin.svg?branch=master)](https://travis-ci.org/wcomnisky/node-kiwicoin)
+
 ## Installation
 
 The package is available on [NPM](https://www.npmjs.com/package/kiwicoin) as **`kiwicoin`**.
